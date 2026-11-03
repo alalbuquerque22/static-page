@@ -35,6 +35,8 @@
     "@context": "https://schema.org",
     "@type": "FinancialService",
     "name": "LMTS",
+    "legalName": "Lmts Inova Simples (I.s.)",
+    "taxID": "69.539.194/0001-02",
     "url": "https://lmts.com.br",
     "description": "Plataforma de análise inteligente de investimentos com suporte de inteligência artificial.",
     "areaServed": "BR",
@@ -759,6 +761,20 @@
       font-size: 0.875rem; color: var(--text-muted);
       line-height: 1.65; max-width: 280px; margin-bottom: 1.5rem;
     }
+    .footer__company-info {
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(243,216,141,0.08);
+    }
+    .footer__company-text {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .footer__company-text strong {
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
     .footer__col-title {
       font-size: 0.68rem; font-weight: 600;
       letter-spacing: 0.12em; text-transform: uppercase;
@@ -814,10 +830,9 @@
       <!-- Desktop nav -->
       <ul class="nav__links" role="list">
         <li><a href="#solucoes" class="nav__link">Soluções</a></li>
-        <li><a href="#" class="nav__link nav__link--mock" aria-disabled="true" tabindex="-1">Investimentos</a></li>
-        <li><a href="#" class="nav__link nav__link--mock" aria-disabled="true" tabindex="-1">Análises</a></li>
-        <li><a href="#conteudo" class="nav__link nav__link--mock" aria-disabled="true" tabindex="-1">Conteúdo</a></li>
-        <li><a href="#" class="nav__link nav__link--mock" aria-disabled="true" tabindex="-1">Sobre</a></li>
+        <li><a href="#conteudo" class="nav__link">Conteúdo</a></li>
+        <li><a href="#mercado" class="nav__link">Mercado</a></li>
+        <li><a href="#institucional" class="nav__link">Institucional</a></li>
       </ul>
 
       <div class="nav__actions">
@@ -844,10 +859,9 @@
 <div class="nav__drawer" id="mobileDrawer"
      aria-hidden="true" role="dialog" aria-label="Menu de navegação mobile">
   <a href="#solucoes" class="nav__drawer-link">Soluções</a>
-  <a href="#" class="nav__drawer-link nav__drawer-link--muted">Investimentos</a>
-  <a href="#" class="nav__drawer-link nav__drawer-link--muted">Análises</a>
-  <a href="#" class="nav__drawer-link nav__drawer-link--muted">Conteúdo</a>
-  <a href="#" class="nav__drawer-link nav__drawer-link--muted">Sobre</a>
+  <a href="#conteudo" class="nav__drawer-link">Conteúdo</a>
+  <a href="#mercado" class="nav__drawer-link">Mercado</a>
+  <a href="#institucional" class="nav__drawer-link">Institucional</a>
   <div class="nav__drawer-cta">
     <a href="waitlist.html" class="btn btn--primary">Solicitar convite</a>
   </div>
@@ -875,11 +889,6 @@
     <div class="hero__glow hero__glow--gold"  aria-hidden="true"></div>
 
     <div class="hero__content">
-      <p class="hero__eyebrow">
-        <span class="hero__eyebrow-dot" aria-hidden="true"></span>
-        Plataforma em desenvolvimento
-      </p>
-
       <h1 class="hero__headline" id="hero-headline">
         Invista com<br>
         <em>convicção</em>
@@ -974,13 +983,13 @@
             Resumo do mercado todo dia. O que subiu, o que caiu e o que vale a pena
             acompanhar tudo em menos de 3 minutos.
           </p>
-          <span class="sol-card__link" aria-label="Em breve">
-            Em breve
-            <!-- <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          <a href="waitlist.html" class="sol-card__link" aria-label="Solicitar acesso ao Radar diário">
+            Solicitar acesso
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                  stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg> -->
-          </span>
+            </svg>
+          </a>
         </article>
 
         <article class="sol-card reveal" role="listitem" style="transition-delay:.08s">
@@ -995,13 +1004,13 @@
             Cada ativo recebe uma nota de 0 a 100 e um veredicto: COMPRAR, MANTER ou EVITAR.
             Decisão baseada em dados, não em achismo.
           </p>
-          <span class="sol-card__link" aria-label="Em breve">
-            Em breve
-            <!-- <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          <a href="waitlist.html" class="sol-card__link" aria-label="Solicitar acesso à Análise completa">
+            Solicitar acesso
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                  stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg> -->
-          </span>
+            </svg>
+          </a>
         </article>
 
         <article class="sol-card reveal" role="listitem" style="transition-delay:.16s">
@@ -1016,13 +1025,13 @@
             Acompanhe os ativos que você escolheu: preço, variação e alertas numa só tela.
             Simples de montar, fácil de acompanhar.
           </p>
-          <span class="sol-card__link" aria-label="Em breve">
-            Em breve
-            <!-- <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          <a href="waitlist.html" class="sol-card__link" aria-label="Solicitar acesso à Minha carteira">
+            Solicitar acesso
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                  stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg> -->
-          </span>
+            </svg>
+          </a>
         </article>
 
         <article class="sol-card reveal" role="listitem" style="transition-delay:.24s">
@@ -1038,13 +1047,13 @@
             As notícias mais relevantes do dia, organizadas por ativo. Sem ruído,
             sem precisar garimpar em vários sites.
           </p>
-          <span class="sol-card__link" aria-label="Em breve">
-            Em breve
-            <!-- <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          <a href="waitlist.html" class="sol-card__link" aria-label="Solicitar acesso às Notícias do mercado">
+            Solicitar acesso
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                  stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg> -->
-          </span>
+            </svg>
+          </a>
         </article>
 
       </div>
@@ -1075,7 +1084,7 @@
             <h3 class="article-feature__title">
               Como montar uma carteira sólida e disciplinada com a taxa de juros nas alturas
             </h3>
-            <p class="article-feature__meta">Análises Lmts · Em breve</p>
+            <p class="article-feature__meta">Análises Lmts · <a href="waitlist.html" style="color: var(--green); text-decoration: underline;">Solicitar acesso</a></p>
           </div>
         </article>
 
@@ -1093,7 +1102,7 @@
               <h3 class="article-card__title">
                 O que a inflação de outubro indica para quem investe em renda fixa em 2025
               </h3>
-              <p class="article-card__meta">Análise de mercado · Em breve</p>
+              <p class="article-card__meta">Análise de mercado · <a href="waitlist.html" style="color: var(--green); text-decoration: underline;">Solicitar acesso</a></p>
             </div>
           </article>
 
@@ -1109,7 +1118,7 @@
               <h3 class="article-card__title">
                 Nota de análise: veja como a inteligência artificial avalia cada ativo
               </h3>
-              <p class="article-card__meta">Como funciona · Em breve</p>
+              <p class="article-card__meta">Como funciona · <a href="waitlist.html" style="color: var(--green); text-decoration: underline;">Solicitar acesso</a></p>
             </div>
           </article>
 
@@ -1119,7 +1128,7 @@
   </section>
 
   <!-- ── MARKET DATA ── -->
-  <section class="section market" aria-labelledby="market-title">
+  <section class="section market" id="mercado" aria-labelledby="market-title">
     <div class="container">
       <header class="section__header reveal">
         <p class="section__eyebrow">Mercado hoje</p>
@@ -1149,7 +1158,7 @@
         </div>
       </div>
       <p class="market-note">
-        Dados ilustrativos. A plataforma exibirá cotações em tempo real após o lançamento.
+        Cotações e indicadores com atualização periódica de mercado. Fontes: B3 e Banco Central do Brasil.
       </p>
     </div>
   </section>
@@ -1169,15 +1178,14 @@
         </div>
 
         <div class="reveal" style="transition-delay:.12s">
-          <p class="section__eyebrow">Acesso antecipado</p>
+          <p class="section__eyebrow">Acesso à plataforma</p>
           <h2 class="cta-section__headline" id="cta-headline">
             Invista com<br>
             <em>mais clareza</em><br>
             e menos ruído
           </h2>
           <p class="cta-section__body">
-            Entre na lista de espera e seja um dos primeiros a usar quando abrirmos.
-            Sem mensagens indesejadas, sem compromisso
+            Solicite seu acesso exclusivo para começar a utilizar todas as ferramentas de análise inteligente da LMTS.
           </p>
           <div class="cta-section__buttons">
             <a href="waitlist.html" class="btn btn--primary">Solicitar convite</a>
@@ -1194,7 +1202,7 @@
 <!-- ════════════════════════════════════════════
      FOOTER
 ════════════════════════════════════════════ -->
-<footer class="footer" role="contentinfo">
+<footer class="footer" id="institucional" role="contentinfo">
   <div class="container">
     <div class="footer__grid">
 
@@ -1204,6 +1212,11 @@
           Análise de ativos com apoio de inteligência artificial. Para quem quer
           investir com mais clareza e menos achismo.
         </p>
+        <div class="footer__company-info">
+          <p class="footer__col-title">Informações de Registro</p>
+          <p class="footer__company-text"><strong>Razão Social:</strong> Lmts Inova Simples (I.s.)</p>
+          <p class="footer__company-text"><strong>CNPJ:</strong> 69.539.194/0001-02</p>
+        </div>
       </div>
 
       <nav aria-label="Plataforma">
@@ -1229,17 +1242,16 @@
       <nav aria-label="Empresa">
         <p class="footer__col-title">Empresa</p>
         <ul class="footer__links">
-          <li><a href="#">Sobre</a></li>
-          <li><a href="#">Carreiras</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Contato</a></li>
+          <li><a href="#institucional">Sobre</a></li>
+          <li><a href="waitlist.html">Solicitar acesso</a></li>
+          <li><a href="mailto:admin@lmts.com.br">Contato</a></li>
         </ul>
       </nav>
 
     </div>
 
     <div class="footer__bottom">
-      <span>© 2025 LMTS. Todos os direitos reservados.</span>
+      <span>© 2025 Lmts Inova Simples (I.s.) · CNPJ: 69.539.194/0001-02. Todos os direitos reservados.</span>
       <nav class="footer__legal" aria-label="Links legais">
         <a href="#">Privacidade</a>
         <a href="#">Termos de uso</a>
