@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Política de Privacidade da LMTS: como coletamos, usamos, armazenamos e protegemos seus dados pessoais, em conformidade com a LGPD." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://lmts.com.br/privacidade.html" />
+  <title>Política de Privacidade — LMTS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-deep:    #0f1f1e;
+      --bg-primary: #003333;
+      --bg-mid:     #132322;
+      --bg-surface: #1a2928;
+      --green:      #34d399;
+      --gold:       #f3d88d;
+      --gold-dark:  #a37e2c;
+      --text-primary:   #dfdfdf;
+      --text-secondary: #b8d0cc;
+      --text-muted:     #9ca3af;
+      --font: 'Inter', system-ui, -apple-system, sans-serif;
+      --max-w: 820px;
+      --gutter: clamp(1.25rem, 5vw, 2.5rem);
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--green); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { color: var(--gold); }
+    ul { list-style: none; }
+
+    .page-bg {
+      position: fixed; inset: 0; z-index: -1;
+      background: linear-gradient(160deg, var(--bg-deep) 0%, var(--bg-primary) 35%, var(--bg-mid) 70%, var(--bg-surface) 100%);
+    }
+
+    .topbar {
+      border-bottom: 1px solid rgba(243,216,141,0.10);
+      background: rgba(15,31,30,0.80);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      position: sticky; top: 0; z-index: 10;
+    }
+    .topbar__inner {
+      max-width: 1100px; margin: 0 auto; padding: 0.85rem var(--gutter);
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    .topbar__logo img { height: 28px; width: auto; }
+    .topbar__back { font-size: 0.85rem; color: var(--text-secondary); text-decoration: none; }
+    .topbar__back:hover { color: var(--text-primary); }
+
+    .doc {
+      max-width: var(--max-w); margin: 0 auto;
+      padding: clamp(2.5rem, 6vw, 4.5rem) var(--gutter) 4rem;
+    }
+    .doc__eyebrow {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--gold-dark); margin-bottom: 0.75rem;
+    }
+    .doc__title {
+      font-size: clamp(1.9rem, 4.5vw, 2.6rem); font-weight: 700;
+      line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 0.75rem;
+    }
+    .doc__meta { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 2rem; }
+
+    .callout {
+      border: 1px solid rgba(52,211,153,0.20);
+      background: rgba(19,35,34,0.65);
+      border-radius: 12px; padding: 1.1rem 1.25rem; margin-bottom: 2rem;
+      font-size: 0.92rem; color: var(--text-secondary);
+    }
+    .callout strong { color: var(--text-primary); }
+
+    .toc {
+      border: 1px solid rgba(243,216,141,0.12);
+      border-radius: 12px; padding: 1.1rem 1.25rem; margin-bottom: 2.5rem;
+      background: rgba(26,41,40,0.55);
+    }
+    .toc__title {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold-dark); margin-bottom: 0.6rem;
+    }
+    .toc ol { padding-left: 1.2rem; columns: 2; column-gap: 2rem; font-size: 0.88rem; }
+    .toc li { margin-bottom: 0.25rem; break-inside: avoid; }
+    .toc a { text-decoration: none; color: var(--text-secondary); }
+    .toc a:hover { color: var(--green); }
+    @media (max-width: 620px) { .toc ol { columns: 1; } }
+
+    .doc h2 {
+      font-size: 1.2rem; font-weight: 600; color: var(--gold);
+      margin: 2.4rem 0 0.8rem; scroll-margin-top: 80px;
+    }
+    .doc h3 { font-size: 0.98rem; font-weight: 600; margin: 1.4rem 0 0.4rem; }
+    .doc p { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.9rem; }
+    .doc ul.list { margin: 0 0 1rem 0; }
+    .doc ul.list li {
+      position: relative; padding-left: 1.2rem; margin-bottom: 0.4rem;
+      font-size: 0.95rem; color: var(--text-secondary);
+    }
+    .doc ul.list li::before {
+      content: ''; position: absolute; left: 0; top: 0.72em;
+      width: 5px; height: 5px; border-radius: 50%; background: var(--green);
+    }
+    .doc strong { color: var(--text-primary); font-weight: 600; }
+
+    .table-wrap { overflow-x: auto; margin: 0.5rem 0 1.25rem; border: 1px solid rgba(243,216,141,0.12); border-radius: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 560px; }
+    th, td { text-align: left; padding: 0.7rem 0.85rem; vertical-align: top; }
+    th {
+      font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--gold-dark); background: rgba(26,41,40,0.8); font-weight: 600;
+    }
+    td { color: var(--text-secondary); border-top: 1px solid rgba(243,216,141,0.08); }
+
+    .company {
+      border-top: 1px solid rgba(243,216,141,0.12);
+      margin-top: 2.5rem; padding-top: 1.5rem;
+      font-size: 0.85rem; color: var(--text-muted); line-height: 1.7;
+    }
+    .company strong { color: var(--text-secondary); }
+
+    .footer-simple {
+      border-top: 1px solid rgba(243,216,141,0.08);
+      padding: 1.5rem var(--gutter); text-align: center;
+      font-size: 0.78rem; color: var(--text-muted);
+    }
+    .footer-simple a { color: var(--text-muted); text-decoration: none; margin: 0 0.5rem; }
+    .footer-simple a:hover { color: var(--text-primary); }
+  </style>
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a href="/" class="topbar__logo" aria-label="LMTS — página inicial">
+        <img src="assets/logo_landscape.png" alt="LMTS" />
+      </a>
+      <a href="/" class="topbar__back">← Voltar ao início</a>
+    </div>
+  </header>
+
+  <main class="doc" id="main-content">
+    <p class="doc__eyebrow">Documento legal</p>
+    <h1 class="doc__title">Política de Privacidade</h1>
+    <p class="doc__meta">Versão 1.0 · Vigente a partir de 05 de novembro de 2026</p>
+
+    <div class="callout">
+      <strong>Resumo.</strong> Coletamos apenas os dados necessários para liberar e operar seu acesso à plataforma LMTS.
+      Não vendemos seus dados pessoais. Você pode acessar, corrigir ou excluir suas informações a qualquer momento
+      escrevendo para <a href="mailto:admin@lmts.com.br">admin@lmts.com.br</a>.
+    </div>
+
+    <nav class="toc" aria-label="Sumário">
+      <p class="toc__title">Sumário</p>
+      <ol>
+        <li><a href="#s1">Quem somos (Controlador)</a></li>
+        <li><a href="#s2">Dados que coletamos</a></li>
+        <li><a href="#s3">Finalidades e bases legais</a></li>
+        <li><a href="#s4">Compartilhamento de dados</a></li>
+        <li><a href="#s5">Transferência internacional</a></li>
+        <li><a href="#s6">Armazenamento e retenção</a></li>
+        <li><a href="#s7">Segurança</a></li>
+        <li><a href="#s8">Seus direitos (LGPD)</a></li>
+        <li><a href="#s9">Cookies e tecnologias similares</a></li>
+        <li><a href="#s10">Crianças e adolescentes</a></li>
+        <li><a href="#s11">Encarregado de dados (DPO)</a></li>
+        <li><a href="#s12">Alterações desta política</a></li>
+        <li><a href="#s13">Legislação e contato</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="s1">1. Quem somos (Controlador)</h2>
+    <p>
+      Esta Política descreve como a <strong>LMTS INOVA SIMPLES (I.S.)</strong>, inscrita no CNPJ sob o nº
+      <strong>69.539.194/0001-02</strong>, com sede na Área Rural, 1560, Sala C37, Bairro Área Rural de Macaíba,
+      Macaíba/RN, CEP 59288-899 (“<strong>LMTS</strong>”, “nós”), trata dados pessoais de visitantes do site
+      <strong>lmts.com.br</strong> e de usuários da plataforma e do aplicativo Limitless (“<strong>Plataforma</strong>”).
+    </p>
+    <p>
+      Para os dados descritos abaixo, a LMTS atua como <strong>Controladora</strong>, nos termos da Lei nº 13.709/2018
+      (Lei Geral de Proteção de Dados — “LGPD”).
+    </p>
+
+    <h2 id="s2">2. Dados que coletamos</h2>
+
+    <h3>2.1. Solicitação de convite (lista de espera)</h3>
+    <p>Ao preencher o formulário em <a href="waitlist.html">waitlist.html</a>, coletamos:</p>
+    <ul class="list">
+      <li>nome completo;</li>
+      <li>endereço de e-mail;</li>
+      <li>número de celular com DDD.</li>
+    </ul>
+
+    <h3>2.2. Cadastro e uso da Plataforma</h3>
+    <ul class="list">
+      <li><strong>Dados de cadastro:</strong> nome, e-mail, senha (quando o cadastro é por e-mail), CPF, telefone e data de nascimento;</li>
+      <li><strong>Login com Google:</strong> quando você opta por entrar com sua conta Google, recebemos o seu nome e e-mail, e um token de identificação emitido pelo Google. Não temos acesso à sua senha do Google;</li>
+      <li><strong>Dados de uso e preferências:</strong> ativos que você acompanha (watchlist/carteira), perfil de investidor informado por você, alertas gerados e lidos, e consultas feitas a análises e notícias;</li>
+      <li><strong>Dados de sessão:</strong> tokens de autenticação necessários para manter você conectado.</li>
+    </ul>
+
+    <h3>2.3. Dados armazenados no seu dispositivo</h3>
+    <p>
+      O aplicativo guarda localmente no seu aparelho informações de sessão, dados de perfil, perfil de investidor e lista de
+      ativos acompanhados, para que o app funcione de forma contínua. Esses dados permanecem no dispositivo até você sair da
+      conta ou desinstalar o aplicativo.
+    </p>
+
+    <h3>2.4. Dados técnicos</h3>
+    <p>
+      Como em qualquer serviço online, nossos servidores e provedores podem registrar endereço IP, data e hora de acesso,
+      tipo de dispositivo/navegador e registros de erro, necessários à segurança e ao funcionamento do serviço.
+    </p>
+
+    <p>
+      <strong>Não coletamos</strong> dados bancários, números de cartão, senhas de corretoras ou credenciais de acesso a
+      contas de investimento. A LMTS não executa ordens de compra e venda em seu nome.
+    </p>
+
+    <h2 id="s3">3. Finalidades e bases legais</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Finalidade</th><th>Dados</th><th>Base legal (LGPD, art. 7º)</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Analisar solicitações de convite e entrar em contato para liberar o acesso</td>
+            <td>Nome, e-mail, celular</td>
+            <td>Procedimentos preliminares relacionados a contrato, a pedido do titular (art. 7º, V)</td>
+          </tr>
+          <tr>
+            <td>Criar e manter sua conta, autenticar acessos e prestar os serviços da Plataforma</td>
+            <td>Nome, e-mail, senha, CPF, telefone, data de nascimento, dados de sessão</td>
+            <td>Execução de contrato (art. 7º, V)</td>
+          </tr>
+          <tr>
+            <td>Verificar identidade, evitar duplicidade de contas e fraudes</td>
+            <td>CPF, e-mail, data de nascimento, dados técnicos</td>
+            <td>Legítimo interesse (art. 7º, IX) e prevenção à fraude (art. 11, II, “g”, quando aplicável)</td>
+          </tr>
+          <tr>
+            <td>Personalizar análises, carteira, notícias e alertas</td>
+            <td>Watchlist, perfil de investidor, histórico de uso</td>
+            <td>Execução de contrato (art. 7º, V)</td>
+          </tr>
+          <tr>
+            <td>Comunicações sobre o serviço (acesso, segurança, atualizações dos Termos)</td>
+            <td>Nome, e-mail, telefone</td>
+            <td>Execução de contrato e legítimo interesse (art. 7º, V e IX)</td>
+          </tr>
+          <tr>
+            <td>Cumprir obrigações legais, regulatórias e atender autoridades</td>
+            <td>Conforme exigido</td>
+            <td>Cumprimento de obrigação legal ou regulatória (art. 7º, II)</td>
+          </tr>
+          <tr>
+            <td>Exercício regular de direitos em processos judiciais, administrativos ou arbitrais</td>
+            <td>Conforme necessário</td>
+            <td>Exercício regular de direitos (art. 7º, VI)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Quando o tratamento depender de consentimento (por exemplo, comunicações de marketing, se e quando oferecidas), você
+      poderá revogá-lo a qualquer momento, sem prejuízo da licitude do tratamento realizado anteriormente.
+    </p>
+
+    <h2 id="s4">4. Compartilhamento de dados</h2>
+    <p><strong>Não vendemos nem alugamos seus dados pessoais.</strong> Compartilhamos dados apenas quando necessário, com:</p>
+    <ul class="list">
+      <li><strong>Provedores de infraestrutura e hospedagem</strong>, como a Amazon Web Services (AWS), que hospeda nossos servidores e banco de dados;</li>
+      <li><strong>EmailJS</strong>, que processa o envio das solicitações de convite do formulário do site para a nossa caixa de e-mail;</li>
+      <li><strong>Google</strong>, quando você opta pelo login com Google, e para a entrega de fontes tipográficas do site (Google Fonts), o que pode expor seu endereço IP ao provedor;</li>
+      <li><strong>Autoridades públicas</strong>, mediante ordem judicial ou exigência legal;</li>
+      <li><strong>Assessores jurídicos, contábeis e de segurança</strong>, sob dever de confidencialidade;</li>
+      <li><strong>Eventual sucessor</strong>, em caso de reorganização societária, mantidas as garantias desta Política.</li>
+    </ul>
+    <p>
+      Esses terceiros atuam como operadores ou controladores independentes dentro de suas finalidades e estão sujeitos às
+      próprias políticas de privacidade.
+    </p>
+
+    <h2 id="s5">5. Transferência internacional de dados</h2>
+    <p>
+      Alguns de nossos provedores (como AWS, Google e EmailJS) podem armazenar ou processar dados em servidores localizados
+      fora do Brasil, incluindo os Estados Unidos. Nessas hipóteses, a transferência é realizada nos termos dos arts. 33 a
+      36 da LGPD, com a adoção de salvaguardas contratuais e de segurança compatíveis com o nível de proteção exigido pela
+      legislação brasileira.
+    </p>
+
+    <h2 id="s6">6. Armazenamento e retenção</h2>
+    <p>Mantemos seus dados pelo tempo necessário para cumprir as finalidades descritas, observando os seguintes critérios:</p>
+    <ul class="list">
+      <li><strong>Solicitações de convite:</strong> mantidas enquanto durar a análise e a liberação do acesso e, se não houver cadastro, excluídas mediante solicitação ou após período razoável de inatividade;</li>
+      <li><strong>Contas ativas:</strong> mantidas enquanto a conta existir;</li>
+      <li><strong>Após o encerramento da conta:</strong> eliminamos ou anonimizamos os dados, ressalvada a conservação necessária para cumprimento de obrigação legal ou regulatória, exercício regular de direitos e prevenção à fraude (art. 16 da LGPD).</li>
+    </ul>
+
+    <h2 id="s7">7. Segurança</h2>
+    <p>
+      Adotamos medidas técnicas e organizacionais razoáveis para proteger os dados pessoais contra acessos não autorizados,
+      perda, alteração ou divulgação indevida, incluindo autenticação por token, comunicação por conexão segura (HTTPS),
+      controle de acesso restrito a pessoas autorizadas e segregação de ambientes de infraestrutura.
+    </p>
+    <p>
+      Nenhum sistema é totalmente imune a falhas. Em caso de incidente de segurança que possa acarretar risco ou dano
+      relevante aos titulares, comunicaremos a Autoridade Nacional de Proteção de Dados (ANPD) e os titulares afetados, nos
+      termos do art. 48 da LGPD. Recomendamos que você mantenha sua senha em sigilo e não a reutilize em outros serviços.
+    </p>
+
+    <h2 id="s8">8. Seus direitos (LGPD)</h2>
+    <p>Nos termos do art. 18 da LGPD, você pode solicitar, a qualquer momento:</p>
+    <ul class="list">
+      <li>confirmação da existência de tratamento;</li>
+      <li>acesso aos seus dados;</li>
+      <li>correção de dados incompletos, inexatos ou desatualizados;</li>
+      <li>anonimização, bloqueio ou eliminação de dados desnecessários, excessivos ou tratados em desconformidade;</li>
+      <li>portabilidade dos dados, observados os segredos comercial e industrial;</li>
+      <li>eliminação dos dados tratados com base em consentimento;</li>
+      <li>informação sobre as entidades com as quais compartilhamos seus dados;</li>
+      <li>informação sobre a possibilidade de não fornecer consentimento e suas consequências;</li>
+      <li>revogação do consentimento;</li>
+      <li>revisão de decisões tomadas unicamente com base em tratamento automatizado que afetem seus interesses.</li>
+    </ul>
+    <p>
+      Para exercer seus direitos, envie solicitação para <a href="mailto:admin@lmts.com.br">admin@lmts.com.br</a>. Podemos
+      pedir informações adicionais para confirmar sua identidade. Responderemos no prazo previsto na legislação. Você também
+      pode apresentar reclamação à ANPD (<a href="https://www.gov.br/anpd" target="_blank" rel="noopener">gov.br/anpd</a>).
+    </p>
+    <p>
+      <strong>Decisões automatizadas.</strong> As notas, indicadores e classificações da Plataforma são gerados com apoio de
+      modelos de dados e inteligência artificial e têm caráter informativo. Eles não produzem efeitos jurídicos sobre você e
+      não substituem sua decisão de investimento. Você pode solicitar esclarecimentos sobre os critérios gerais utilizados.
+    </p>
+
+    <h2 id="s9">9. Cookies e tecnologias similares</h2>
+    <p>
+      O site institucional da LMTS não utiliza cookies de publicidade ou de rastreamento comportamental. Podem ser
+      utilizados apenas recursos estritamente necessários ao funcionamento e à segurança do site, além de conteúdos
+      carregados de terceiros (como as fontes do Google Fonts), que podem registrar seu endereço IP.
+    </p>
+    <p>
+      No aplicativo, utilizamos armazenamento local do dispositivo para manter sua sessão e suas preferências. Caso venhamos
+      a adotar cookies analíticos ou de marketing, atualizaremos esta Política e solicitaremos seu consentimento prévio
+      quando exigido. Você pode configurar seu navegador para bloquear ou excluir cookies a qualquer momento.
+    </p>
+
+    <h2 id="s10">10. Crianças e adolescentes</h2>
+    <p>
+      A Plataforma é destinada exclusivamente a <strong>pessoas maiores de 18 anos</strong> e com capacidade civil plena.
+      Não coletamos intencionalmente dados de menores de idade. Se tomarmos conhecimento de cadastro de menor, excluiremos
+      as informações e encerraremos o acesso.
+    </p>
+
+    <h2 id="s11">11. Encarregado de dados (DPO)</h2>
+    <p>
+      O canal de comunicação com os titulares e com a ANPD é o nosso Encarregado pelo Tratamento de Dados Pessoais:
+    </p>
+    <ul class="list">
+      <li><strong>E-mail:</strong> <a href="mailto:admin@lmts.com.br">admin@lmts.com.br</a></li>
+      <li><strong>Endereço:</strong> Área Rural, 1560, Sala C37, Área Rural de Macaíba, Macaíba/RN, CEP 59288-899</li>
+    </ul>
+
+    <h2 id="s12">12. Alterações desta política</h2>
+    <p>
+      Podemos atualizar esta Política periodicamente para refletir mudanças legais, técnicas ou em nossos serviços. A versão
+      vigente estará sempre disponível nesta página, com a data de vigência no topo. Alterações relevantes serão comunicadas
+      por e-mail ou pela própria Plataforma.
+    </p>
+
+    <h2 id="s13">13. Legislação e contato</h2>
+    <p>
+      Esta Política é regida pelas leis da República Federativa do Brasil, em especial a LGPD, o Marco Civil da Internet
+      (Lei nº 12.965/2014) e o Código de Defesa do Consumidor (Lei nº 8.078/1990), quando aplicável. Consulte também os
+      nossos <a href="termos.html">Termos de Uso</a>.
+    </p>
+
+    <div class="company">
+      <strong>LMTS INOVA SIMPLES (I.S.)</strong><br />
+      CNPJ: 69.539.194/0001-02<br />
+      Área Rural, 1560, Sala C37 · Área Rural de Macaíba · Macaíba/RN · CEP 59288-899<br />
+      <a href="mailto:admin@lmts.com.br">admin@lmts.com.br</a>
+    </div>
+  </main>
+
+  <footer class="footer-simple" role="contentinfo">
+    <div>© 2026 LMTS Inova Simples (I.S.) · CNPJ 69.539.194/0001-02. Todos os direitos reservados.</div>
+    <div style="margin-top:0.5rem;">
+      <a href="privacidade.html">Privacidade</a> · <a href="termos.html">Termos de uso</a>
+    </div>
+  </footer>
+</body>
+</html>

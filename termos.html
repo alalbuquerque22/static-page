@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Termos de Uso da plataforma LMTS: condições de acesso, natureza informativa das análises, responsabilidades e propriedade intelectual." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://lmts.com.br/termos.html" />
+  <title>Termos de Uso — LMTS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-deep:    #0f1f1e;
+      --bg-primary: #003333;
+      --bg-mid:     #132322;
+      --bg-surface: #1a2928;
+      --green:      #34d399;
+      --gold:       #f3d88d;
+      --gold-dark:  #a37e2c;
+      --warning:    #f59e0b;
+      --text-primary:   #dfdfdf;
+      --text-secondary: #b8d0cc;
+      --text-muted:     #9ca3af;
+      --font: 'Inter', system-ui, -apple-system, sans-serif;
+      --max-w: 820px;
+      --gutter: clamp(1.25rem, 5vw, 2.5rem);
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--green); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { color: var(--gold); }
+    ul { list-style: none; }
+
+    .page-bg {
+      position: fixed; inset: 0; z-index: -1;
+      background: linear-gradient(160deg, var(--bg-deep) 0%, var(--bg-primary) 35%, var(--bg-mid) 70%, var(--bg-surface) 100%);
+    }
+
+    .topbar {
+      border-bottom: 1px solid rgba(243,216,141,0.10);
+      background: rgba(15,31,30,0.80);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      position: sticky; top: 0; z-index: 10;
+    }
+    .topbar__inner {
+      max-width: 1100px; margin: 0 auto; padding: 0.85rem var(--gutter);
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    .topbar__logo img { height: 28px; width: auto; }
+    .topbar__back { font-size: 0.85rem; color: var(--text-secondary); text-decoration: none; }
+    .topbar__back:hover { color: var(--text-primary); }
+
+    .doc {
+      max-width: var(--max-w); margin: 0 auto;
+      padding: clamp(2.5rem, 6vw, 4.5rem) var(--gutter) 4rem;
+    }
+    .doc__eyebrow {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--gold-dark); margin-bottom: 0.75rem;
+    }
+    .doc__title {
+      font-size: clamp(1.9rem, 4.5vw, 2.6rem); font-weight: 700;
+      line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 0.75rem;
+    }
+    .doc__meta { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 2rem; }
+
+    .callout {
+      border: 1px solid rgba(52,211,153,0.20);
+      background: rgba(19,35,34,0.65);
+      border-radius: 12px; padding: 1.1rem 1.25rem; margin-bottom: 1.25rem;
+      font-size: 0.92rem; color: var(--text-secondary);
+    }
+    .callout strong { color: var(--text-primary); }
+    .callout--warn { border-color: rgba(245,158,11,0.40); background: rgba(245,158,11,0.07); }
+    .callout--warn strong { color: var(--warning); }
+
+    .toc {
+      border: 1px solid rgba(243,216,141,0.12);
+      border-radius: 12px; padding: 1.1rem 1.25rem; margin: 1.25rem 0 2.5rem;
+      background: rgba(26,41,40,0.55);
+    }
+    .toc__title {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold-dark); margin-bottom: 0.6rem;
+    }
+    .toc ol { padding-left: 1.2rem; columns: 2; column-gap: 2rem; font-size: 0.88rem; }
+    .toc li { margin-bottom: 0.25rem; break-inside: avoid; }
+    .toc a { text-decoration: none; color: var(--text-secondary); }
+    .toc a:hover { color: var(--green); }
+    @media (max-width: 620px) { .toc ol { columns: 1; } }
+
+    .doc h2 {
+      font-size: 1.2rem; font-weight: 600; color: var(--gold);
+      margin: 2.4rem 0 0.8rem; scroll-margin-top: 80px;
+    }
+    .doc h3 { font-size: 0.98rem; font-weight: 600; margin: 1.4rem 0 0.4rem; }
+    .doc p { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.9rem; }
+    .doc ul.list { margin: 0 0 1rem 0; }
+    .doc ul.list li {
+      position: relative; padding-left: 1.2rem; margin-bottom: 0.4rem;
+      font-size: 0.95rem; color: var(--text-secondary);
+    }
+    .doc ul.list li::before {
+      content: ''; position: absolute; left: 0; top: 0.72em;
+      width: 5px; height: 5px; border-radius: 50%; background: var(--green);
+    }
+    .doc strong { color: var(--text-primary); font-weight: 600; }
+
+    .company {
+      border-top: 1px solid rgba(243,216,141,0.12);
+      margin-top: 2.5rem; padding-top: 1.5rem;
+      font-size: 0.85rem; color: var(--text-muted); line-height: 1.7;
+    }
+    .company strong { color: var(--text-secondary); }
+
+    .footer-simple {
+      border-top: 1px solid rgba(243,216,141,0.08);
+      padding: 1.5rem var(--gutter); text-align: center;
+      font-size: 0.78rem; color: var(--text-muted);
+    }
+    .footer-simple a { color: var(--text-muted); text-decoration: none; margin: 0 0.5rem; }
+    .footer-simple a:hover { color: var(--text-primary); }
+  </style>
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a href="/" class="topbar__logo" aria-label="LMTS — página inicial">
+        <img src="assets/logo_landscape.png" alt="LMTS" />
+      </a>
+      <a href="/" class="topbar__back">← Voltar ao início</a>
+    </div>
+  </header>
+
+  <main class="doc" id="main-content">
+    <p class="doc__eyebrow">Documento legal</p>
+    <h1 class="doc__title">Termos de Uso</h1>
+    <p class="doc__meta">Versão 1.0 · Vigente a partir de 05 de novembro de 2026</p>
+
+    <div class="callout callout--warn">
+      <strong>Aviso importante sobre investimentos.</strong> O conteúdo da LMTS tem caráter exclusivamente informativo e
+      educacional. Não constitui recomendação de investimento, consultoria, análise de valores mobiliários regulada nem
+      promessa de rentabilidade. Investimentos envolvem riscos, inclusive de perda do capital. Rentabilidade passada não
+      garante resultados futuros.
+    </div>
+    <div class="callout">
+      <strong>Resumo.</strong> Ao criar uma conta ou usar a Plataforma LMTS, você declara ter lido e aceito estes Termos e a
+      nossa <a href="privacidade.html">Política de Privacidade</a>.
+    </div>
+
+    <nav class="toc" aria-label="Sumário">
+      <p class="toc__title">Sumário</p>
+      <ol>
+        <li><a href="#s1">Quem somos e definições</a></li>
+        <li><a href="#s2">Aceitação e alterações</a></li>
+        <li><a href="#s3">Elegibilidade e cadastro</a></li>
+        <li><a href="#s4">Descrição dos serviços</a></li>
+        <li><a href="#s5">Natureza informativa e isenções</a></li>
+        <li><a href="#s6">Obrigações do usuário</a></li>
+        <li><a href="#s7">Condutas proibidas</a></li>
+        <li><a href="#s8">Propriedade intelectual</a></li>
+        <li><a href="#s9">Dados de mercado e terceiros</a></li>
+        <li><a href="#s10">Disponibilidade do serviço</a></li>
+        <li><a href="#s11">Limitação de responsabilidade</a></li>
+        <li><a href="#s12">Suspensão e encerramento</a></li>
+        <li><a href="#s13">Privacidade e proteção de dados</a></li>
+        <li><a href="#s14">Disposições gerais</a></li>
+        <li><a href="#s15">Lei aplicável e foro</a></li>
+        <li><a href="#s16">Contato</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="s1">1. Quem somos e definições</h2>
+    <p>
+      A plataforma e o aplicativo <strong>Limitless</strong> (“<strong>Plataforma</strong>”) são operados pela
+      <strong>LMTS INOVA SIMPLES (I.S.)</strong>, CNPJ <strong>69.539.194/0001-02</strong>, com sede na Área Rural, 1560,
+      Sala C37, Bairro Área Rural de Macaíba, Macaíba/RN, CEP 59288-899 (“<strong>LMTS</strong>”, “nós”).
+    </p>
+    <ul class="list">
+      <li><strong>Usuário:</strong> pessoa física que acessa o site ou utiliza a Plataforma;</li>
+      <li><strong>Conteúdo:</strong> notas, vereditos, resumos de mercado (Radar), notícias, indicadores, alertas, textos, gráficos e demais informações disponibilizadas;</li>
+      <li><strong>Conta:</strong> cadastro individual e pessoal do Usuário na Plataforma.</li>
+    </ul>
+
+    <h2 id="s2">2. Aceitação e alterações</h2>
+    <p>
+      O acesso e o uso da Plataforma implicam aceitação integral destes Termos. Se você não concordar, não utilize a
+      Plataforma. Podemos alterar estes Termos a qualquer tempo; a versão atualizada será publicada nesta página com nova
+      data de vigência e, em caso de mudanças relevantes, comunicada por e-mail ou pela Plataforma. O uso continuado após a
+      vigência das alterações representa aceitação da nova versão.
+    </p>
+
+    <h2 id="s3">3. Elegibilidade e cadastro</h2>
+    <ul class="list">
+      <li>A Plataforma é destinada a <strong>maiores de 18 anos</strong> com plena capacidade civil;</li>
+      <li>O acesso é concedido mediante convite/aprovação, a critério da LMTS, após solicitação pelo formulário de lista de espera;</li>
+      <li>Para criar a Conta, podem ser solicitados nome, e-mail, CPF, telefone e data de nascimento, ou o login por conta Google, nos termos da <a href="privacidade.html">Política de Privacidade</a>;</li>
+      <li>Você declara que as informações fornecidas são verdadeiras, completas e atualizadas, e se compromete a mantê-las assim;</li>
+      <li>A Conta é pessoal e intransferível. Você é responsável por manter a confidencialidade de suas credenciais e por toda atividade realizada em sua Conta. Comunique-nos imediatamente qualquer uso não autorizado.</li>
+    </ul>
+
+    <h2 id="s4">4. Descrição dos serviços</h2>
+    <p>A Plataforma oferece, entre outras funcionalidades, que podem ser alteradas, incluídas ou removidas a qualquer tempo:</p>
+    <ul class="list">
+      <li><strong>Radar diário:</strong> resumo do mercado com destaques de altas, baixas e ativos para acompanhamento;</li>
+      <li><strong>Análise completa (Thesis):</strong> nota de 0 a 100 e classificação (como COMPRAR, MANTER ou EVITAR) atribuída a ativos, com base em dados e modelos, incluindo apoio de inteligência artificial;</li>
+      <li><strong>Minha carteira:</strong> acompanhamento de ativos escolhidos pelo Usuário, com preço, variação e alertas;</li>
+      <li><strong>Notícias do mercado e alertas:</strong> notícias organizadas por ativo e alertas gerados automaticamente a partir de indicadores, como o sentimento de notícias.</li>
+    </ul>
+    <p>
+      A LMTS <strong>não é corretora</strong>, não intermedeia nem executa ordens de compra e venda de valores mobiliários,
+      não custodia recursos de Usuários e não tem acesso a contas de investimento.
+    </p>
+
+    <h2 id="s5">5. Natureza informativa e isenções</h2>
+    <ul class="list">
+      <li>Todo o Conteúdo é fornecido para fins <strong>informativos e educacionais</strong>, e <strong>não</strong> constitui oferta, solicitação, recomendação personalizada de investimento, consultoria ou análise regulada nos termos da regulamentação da Comissão de Valores Mobiliários (CVM);</li>
+      <li>Notas e classificações como “COMPRAR”, “MANTER” ou “EVITAR” são resultados de metodologia automatizada e refletem uma leitura de dados em determinado momento. Não consideram seus objetivos, situação financeira, perfil de risco ou necessidades individuais;</li>
+      <li>Conteúdos gerados com apoio de inteligência artificial podem conter imprecisões, omissões ou desatualizações. Verifique as informações antes de utilizá-las;</li>
+      <li>Toda decisão de investir, manter ou desinvestir é de <strong>exclusiva responsabilidade do Usuário</strong>. Recomendamos consultar profissional habilitado e as fontes oficiais antes de decidir;</li>
+      <li>Investimentos em renda variável e outros ativos envolvem risco de perdas, inclusive superiores ao capital investido em determinadas operações. Rentabilidade passada não é garantia de resultados futuros;</li>
+      <li>Indicadores de precisão, tempo de análise ou desempenho exibidos no site são referências de caráter institucional e não constituem garantia de resultado.</li>
+    </ul>
+
+    <h2 id="s6">6. Obrigações do usuário</h2>
+    <p>Ao utilizar a Plataforma, você se compromete a:</p>
+    <ul class="list">
+      <li>usar o serviço apenas para fins lícitos e pessoais, em conformidade com a lei e com estes Termos;</li>
+      <li>fornecer dados verdadeiros e atualizá-los quando necessário;</li>
+      <li>proteger seu dispositivo e suas credenciais de acesso;</li>
+      <li>respeitar direitos de propriedade intelectual da LMTS e de terceiros.</li>
+    </ul>
+
+    <h2 id="s7">7. Condutas proibidas</h2>
+    <p>É vedado, sem autorização prévia e por escrito da LMTS:</p>
+    <ul class="list">
+      <li>copiar, reproduzir, redistribuir, revender, sublicenciar ou explorar comercialmente o Conteúdo, as notas, vereditos ou a Plataforma;</li>
+      <li>utilizar robôs, scrapers, crawlers ou meios automatizados para extrair dados ou sobrecarregar a infraestrutura;</li>
+      <li>realizar engenharia reversa, descompilar, tentar acessar código-fonte ou contornar mecanismos de segurança ou de controle de acesso;</li>
+      <li>compartilhar a Conta com terceiros ou usar a identidade de outra pessoa;</li>
+      <li>inserir conteúdo malicioso, vírus ou tentar obter acesso não autorizado a sistemas e dados de outros usuários;</li>
+      <li>utilizar a Plataforma para fins ilícitos, fraudulentos, de manipulação de mercado ou que violem direitos de terceiros;</li>
+      <li>usar o Conteúdo para treinar modelos de inteligência artificial ou construir produtos concorrentes.</li>
+    </ul>
+
+    <h2 id="s8">8. Propriedade intelectual</h2>
+    <p>
+      A marca <strong>LMTS</strong>, o nome e logotipo <strong>Limitless</strong>, o software, o design, as metodologias,
+      os algoritmos, os textos, as análises, a base de dados e os demais elementos da Plataforma são de titularidade da LMTS
+      ou licenciados a ela, protegidos pela legislação brasileira e por tratados internacionais (Lei nº 9.610/1998, Lei nº
+      9.279/1996 e Lei nº 9.609/1998).
+    </p>
+    <p>
+      A LMTS concede ao Usuário uma licença limitada, pessoal, revogável, não exclusiva e intransferível para acessar e usar
+      a Plataforma e o Conteúdo para fins pessoais e não comerciais, enquanto estes Termos estiverem em vigor. Nenhum direito
+      adicional é cedido.
+    </p>
+
+    <h2 id="s9">9. Dados de mercado e conteúdo de terceiros</h2>
+    <p>
+      Cotações, indicadores, notícias e outros dados podem ser obtidos de fontes de terceiros e podem apresentar atraso,
+      indisponibilidade ou imprecisões. Os valores exibidos de referência (como Ibovespa, CDI, câmbio e Selic) são
+      ilustrativos. A LMTS não garante a exatidão, integralidade ou atualidade desses dados e não se responsabiliza por
+      conteúdos de terceiros ou por sites externos para os quais a Plataforma possa fornecer links.
+    </p>
+
+    <h2 id="s10">10. Disponibilidade do serviço</h2>
+    <p>
+      Empregamos esforços razoáveis para manter a Plataforma disponível, mas não garantimos funcionamento ininterrupto ou
+      livre de erros. O serviço pode ser interrompido para manutenção, atualização, por falhas de terceiros (como provedores
+      de nuvem e de dados) ou por caso fortuito e força maior. Funcionalidades poderão ser alteradas, limitadas ou
+      descontinuadas, com aviso prévio razoável sempre que possível.
+    </p>
+
+    <h2 id="s11">11. Limitação de responsabilidade</h2>
+    <p>Na máxima extensão permitida pela lei aplicável, a LMTS não se responsabiliza por:</p>
+    <ul class="list">
+      <li>perdas financeiras, lucros cessantes ou danos decorrentes de decisões de investimento tomadas com base no Conteúdo;</li>
+      <li>imprecisões, atrasos ou indisponibilidade de dados de mercado e de terceiros;</li>
+      <li>danos decorrentes de uso indevido da Conta, perda de credenciais ou falhas de segurança do dispositivo do Usuário;</li>
+      <li>indisponibilidades, falhas de conexão ou eventos fora de seu controle razoável.</li>
+    </ul>
+    <p>
+      Nada nestes Termos exclui ou limita responsabilidades que não possam ser excluídas ou limitadas por lei, inclusive
+      direitos assegurados ao consumidor pelo Código de Defesa do Consumidor, quando aplicável.
+    </p>
+
+    <h2 id="s12">12. Suspensão e encerramento</h2>
+    <p>
+      Você pode encerrar sua Conta a qualquer momento, mediante solicitação para
+      <a href="mailto:admin@lmts.com.br">admin@lmts.com.br</a>. A LMTS poderá suspender ou encerrar o acesso, com ou sem
+      aviso prévio, em caso de violação destes Termos, suspeita de fraude ou uso indevido, determinação legal ou
+      descontinuação do serviço. Cláusulas que, por sua natureza, devam subsistir ao encerramento (como propriedade
+      intelectual e limitação de responsabilidade) continuarão em vigor.
+    </p>
+
+    <h2 id="s13">13. Privacidade e proteção de dados</h2>
+    <p>
+      O tratamento de dados pessoais é regido pela nossa <a href="privacidade.html">Política de Privacidade</a>, em
+      conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018). Para exercer seus direitos como titular,
+      escreva para <a href="mailto:admin@lmts.com.br">admin@lmts.com.br</a>.
+    </p>
+
+    <h2 id="s14">14. Disposições gerais</h2>
+    <ul class="list">
+      <li><strong>Integralidade:</strong> estes Termos e a Política de Privacidade constituem o acordo integral entre você e a LMTS sobre o uso da Plataforma;</li>
+      <li><strong>Divisibilidade:</strong> se qualquer disposição for considerada inválida ou inexequível, as demais permanecerão em pleno vigor;</li>
+      <li><strong>Não renúncia:</strong> a tolerância ou a não exigência de qualquer direito não implica renúncia a ele;</li>
+      <li><strong>Cessão:</strong> o Usuário não pode ceder seus direitos e obrigações sem autorização da LMTS; a LMTS pode cedê-los em caso de reorganização societária;</li>
+      <li><strong>Comunicações:</strong> as comunicações serão feitas pelo e-mail cadastrado ou pela própria Plataforma.</li>
+    </ul>
+
+    <h2 id="s15">15. Lei aplicável e foro</h2>
+    <p>
+      Estes Termos são regidos pelas leis da República Federativa do Brasil. Fica eleito o foro da Comarca de
+      <strong>Macaíba/RN</strong> para dirimir quaisquer controvérsias, ressalvado o foro do domicílio do consumidor
+      quando a legislação consumerista assim determinar.
+    </p>
+
+    <h2 id="s16">16. Contato</h2>
+    <p>
+      Dúvidas, solicitações ou comunicações sobre estes Termos:
+      <a href="mailto:admin@lmts.com.br">admin@lmts.com.br</a>.
+    </p>
+
+    <div class="company">
+      <strong>LMTS INOVA SIMPLES (I.S.)</strong><br />
+      CNPJ: 69.539.194/0001-02<br />
+      Área Rural, 1560, Sala C37 · Área Rural de Macaíba · Macaíba/RN · CEP 59288-899<br />
+      <a href="mailto:admin@lmts.com.br">admin@lmts.com.br</a>
+    </div>
+  </main>
+
+  <footer class="footer-simple" role="contentinfo">
+    <div>© 2026 LMTS Inova Simples (I.S.) · CNPJ 69.539.194/0001-02. Todos os direitos reservados.</div>
+    <div style="margin-top:0.5rem;">
+      <a href="privacidade.html">Privacidade</a> · <a href="termos.html">Termos de uso</a>
+    </div>
+  </footer>
+</body>
+</html>
