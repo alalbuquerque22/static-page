@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Análises, radar de mercado e notas da LMTS: conteúdo que informa, para decisões que valem." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://lmts.com.br/conteudo.html" />
+  <title>Conteúdo — LMTS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-deep:    #0f1f1e;
+      --bg-primary: #003333;
+      --bg-mid:     #132322;
+      --bg-surface: #1a2928;
+      --green:      #34d399;
+      --gold:       #f3d88d;
+      --gold-dark:  #a37e2c;
+      --text-primary:   #dfdfdf;
+      --text-secondary: #b8d0cc;
+      --text-muted:     #9ca3af;
+      --font: 'Inter', system-ui, -apple-system, sans-serif;
+      --max-w: 760px;
+      --gutter: clamp(1.25rem, 5vw, 2.5rem);
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--green); text-underline-offset: 2px; }
+    a:hover { color: var(--gold); }
+
+    .page-bg {
+      position: fixed; inset: 0; z-index: -1;
+      background: linear-gradient(160deg, var(--bg-deep) 0%, var(--bg-primary) 35%, var(--bg-mid) 70%, var(--bg-surface) 100%);
+    }
+
+    .topbar {
+      border-bottom: 1px solid rgba(243,216,141,0.10);
+      background: rgba(15,31,30,0.80);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      position: sticky; top: 0; z-index: 10;
+    }
+    .topbar__inner {
+      max-width: 1100px; margin: 0 auto; padding: 0.85rem var(--gutter);
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    .topbar__logo img { height: 28px; width: auto; }
+    .topbar__back { font-size: 0.85rem; color: var(--text-secondary); text-decoration: none; }
+    .topbar__back:hover { color: var(--text-primary); }
+
+    .feed {
+      max-width: var(--max-w); margin: 0 auto;
+      padding: clamp(2.5rem, 6vw, 4.5rem) var(--gutter) 3rem;
+    }
+    .feed__eyebrow {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--gold-dark); margin-bottom: 0.75rem;
+    }
+    .feed__title {
+      font-size: clamp(1.9rem, 4.5vw, 2.6rem); font-weight: 700;
+      line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 3rem;
+    }
+
+    /* ── Post ── */
+    .post {
+      padding-bottom: 3.5rem; margin-bottom: 3.5rem;
+      border-bottom: 1px solid rgba(243,216,141,0.12);
+      scroll-margin-top: 80px;
+    }
+    .post__img {
+      display: block; width: 100%; aspect-ratio: 16 / 9;
+      object-fit: cover; border-radius: 14px; margin-bottom: 1.5rem;
+    }
+    .post__tag {
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--green); margin-bottom: 0.6rem;
+    }
+    .post__title {
+      font-size: clamp(1.4rem, 3.2vw, 1.9rem); font-weight: 700;
+      line-height: 1.25; margin-bottom: 0.5rem;
+    }
+    .post__meta { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+    .post p {
+      font-size: 1rem; color: var(--text-secondary); margin-bottom: 1.1rem;
+    }
+
+    /* ── Infinite scroll ──
+       Sem JS todos os posts ficam visíveis. Com JS, os posts além do lote
+       atual recebem o atributo [hidden] até o usuário rolar. */
+    .feed__status {
+      text-align: center; font-size: 0.85rem; color: var(--text-muted);
+      padding: 1rem 0;
+    }
+    #sentinel { height: 1px; }
+
+    .footer-simple {
+      border-top: 1px solid rgba(243,216,141,0.08);
+      padding: 1.5rem var(--gutter); text-align: center;
+      font-size: 0.78rem; color: var(--text-muted);
+    }
+    .footer-simple a { color: var(--text-muted); text-decoration: none; margin: 0 0.5rem; }
+    .footer-simple a:hover { color: var(--text-primary); }
+  </style>
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a href="/" class="topbar__logo" aria-label="LMTS — página inicial">
+        <img src="assets/logo_landscape.png" alt="LMTS" />
+      </a>
+      <a href="index.html#conteudo" class="topbar__back">← Voltar ao início</a>
+    </div>
+  </header>
+
+  <main class="feed" id="main-content">
+    <p class="feed__eyebrow">Análises &amp; Conteúdo</p>
+    <h1 class="feed__title">Conteúdo que informa<br>Decisões que valem</h1>
+
+    <!--
+      ══════════════════════════════════════════════════════════════
+      COMO ADICIONAR UM CONTEÚDO
+      1. Copie o bloco <article class="post"> do modelo abaixo.
+      2. Cole-o ACIMA do conteúdo mais antigo (o mais recente fica no topo).
+      3. Use um id único (ex.: id="post-meu-titulo"). Esse id é usado
+         para linkar a partir da home: conteudo.html#post-meu-titulo
+      4. Troque imagem (assets/...), tag, manchete, meta e os 3 parágrafos.
+
+      <article class="post" id="post-meu-titulo">
+        <img class="post__img" src="assets/IMAGEM.jpg" alt="Descrição da imagem" width="760" height="428" loading="lazy" />
+        <p class="post__tag">Categoria · Subcategoria</p>
+        <h2 class="post__title">Manchete do conteúdo</h2>
+        <p class="post__meta">Autor ou fonte · 05 nov 2026</p>
+        <p>Parágrafo 1.</p>
+        <p>Parágrafo 2.</p>
+        <p>Parágrafo 3.</p>
+      </article>
+      ══════════════════════════════════════════════════════════════
+    -->
+
+    <div id="posts" data-batch="2">
+
+      <article class="post" id="post-carteira-solida">
+        <img class="post__img" src="assets/contra_capa_familia.jpg" alt="Família planejando investimentos de longo prazo" width="760" height="428" />
+        <p class="post__tag">Análise · Patrimônio</p>
+        <h2 class="post__title">Como montar uma carteira sólida e disciplinada com a taxa de juros nas alturas</h2>
+        <p class="post__meta">Análises Lmts · 05 nov 2026</p>
+        <p>
+          Montar uma carteira de investimentos sólida e disciplinada em um cenário de juros elevados exige estratégia, diversificação e visão de longo prazo. Com a taxa Selic em patamares altos, a renda fixa ganha atratividade, especialmente em títulos pós-fixados atrelados ao CDI e ao Tesouro Selic, que oferecem boa rentabilidade com menor exposição à volatilidade. Nesse cenário, é importante aproveitar as oportunidades sem concentrar todo o patrimônio em uma única classe de ativos.
+        </p>
+        <p>
+          A construção da carteira deve respeitar o perfil de risco, os objetivos financeiros e o horizonte de investimento de cada investidor. Uma estratégia eficiente combina liquidez e segurança para a reserva de emergência, títulos prefixados ou indexados à inflação para proteção e planejamento de longo prazo, além de uma exposição equilibrada à renda variável, que pode oferecer oportunidades de valorização quando os juros começarem a cair. A diversificação reduz riscos e evita decisões concentradas em movimentos pontuais do mercado.
+        </p>
+        <p>
+          Por fim, disciplina é tão importante quanto rentabilidade. Manter aportes regulares, evitar decisões impulsivas diante das oscilações econômicas e realizar rebalanceamentos periódicos são práticas fundamentais para preservar a estratégia. Juros elevados representam uma oportunidade para fortalecer o patrimônio, mas uma carteira consistente não deve ser construída apenas com base no cenário atual, e sim preparada para diferentes ciclos econômicos, sempre priorizando a gestão de riscos e a sustentabilidade dos resultados.
+        </p>
+      </article>
+
+      <article class="post" id="post-inflacao-outubro">
+        <img class="post__img" src="assets/cta_jornal.jpg" alt="Leitura de relatório financeiro" width="760" height="428" loading="lazy" />
+        <p class="post__tag">Radar · Mercado</p>
+        <h2 class="post__title">Raio-x do balanço: KLABIN no 3T26</h2>
+        <p class="post__meta">Análise de mercado · 04 nov 2026</p>
+        <p>
+          Lucro em queda, mas dentro do esperado: A Klabin divulgou seus resultados do 3º trimestre de 2026 registrando lucro líquido de R$ 393 milhões, uma queda de 18% em relação ao mesmo período do ano anterior. A receita líquida cresceu 3%, alcançando R$ 5,57 bilhões, impulsionada pelo aumento dos preços de celulose em dólar e pela alocação estratégica de vendas. Já o Ebitda ajustado recuou 12%, somando R$ 1,86 bilhão, alinhado às expectativas dos analistas.
+        </p>
+        <p>
+          Pressionada por custos e câmbio: A redução nas margens de lucro foi diretamente impactada por fatores externos e operacionais. O custo caixa por tonelada subiu 12%, atingindo R$ 3.483, puxado por despesas de mitigação dos efeitos do El Niño (R$ 111/t) e por pressões em insumos e fretes devido a conflitos geopolíticos (R$ 66/t). Além disso, a apreciação de 5,7% do real frente ao dólar no período acabou reduzindo o ganho das exportações.
+        </p>
+        <p>
+          Solidez financeira e gestão de dívidas: Apesar dos ventos contrários no curto prazo, a administração da Klabin reforçou seu compromisso com a eficiência operacional e a disciplina financeira. Como passo estratégico, a companhia anunciou o alongamento dos vencimentos de dívidas ligadas ao Projeto Puma II (estendendo prazos até 2034), mantendo a alavancagem em 3,3x e a dívida bruta sob controle, posicionando a empresa com flexibilidade para atravessar momentos de volatilidade.
+        </p>
+      </article>
+
+      <article class="post" id="post-nota-analise-ia">
+        <img class="post__img" src="assets/capa_homem_terno_andando.jpg" alt="Executivo analisando portfólio" width="760" height="428" loading="lazy" />
+        <p class="post__tag">Análise · Como funciona</p>
+        <h2 class="post__title">Nota de análise: veja como a inteligência artificial avalia cada ativo</h2>
+        <p class="post__meta">Como funciona · 03 nov 2026</p>
+        <p>
+          A inteligência artificial está transformando a análise de ações e o mercado financeiro ao permitir que grandes volumes de dados sejam processados em poucos segundos. Na avaliação de cada ativo, ela pode cruzar indicadores fundamentalistas, como lucro, endividamento, fluxo de caixa, dividendos e múltiplos de valuation, com informações técnicas, tendências de preços, volume negociado, notícias e dados macroeconômicos. A partir dessas informações, os modelos identificam padrões, comparam empresas, estimam riscos e apontam possíveis oportunidades de investimento. No entanto, suas análises são probabilísticas e dependem da qualidade dos dados e dos modelos utilizados, não representando garantia de rentabilidade.
+        </p>
+        <p>
+          Para o investidor humano, utilizar a inteligência artificial como ferramenta de apoio representa uma vantagem competitiva importante. Ela permite ganhar agilidade, ampliar a capacidade de análise, reduzir o tempo gasto em pesquisas e identificar informações que poderiam passar despercebidas em uma avaliação convencional. Além disso, o investidor pode utilizar a tecnologia para simular cenários, comparar ativos, monitorar indicadores e testar diferentes estratégias, mantendo o julgamento humano na tomada de decisão. A combinação entre conhecimento financeiro, experiência e capacidade analítica da IA pode tornar o processo de investimento mais eficiente e disciplinado.
+        </p>
+        <p>
+          Quem não utiliza inteligência artificial não necessariamente perde dinheiro ou oportunidades, mas pode perder eficiência, velocidade e acesso a uma capacidade de análise cada vez mais relevante no mercado. Em um ambiente no qual informações e expectativas mudam rapidamente, depender exclusivamente de análises manuais pode representar uma desvantagem operacional. O grande diferencial não está em deixar a IA decidir onde investir, mas em saber utilizá-la para tomar decisões mais fundamentadas, identificar riscos com antecedência e construir uma estratégia consistente. No mercado de ações, a tecnologia não substitui o investidor preparado; ela potencializa sua capacidade de análise e decisão.
+        </p>
+      </article>
+
+    </div>
+
+    <div id="sentinel" aria-hidden="true"></div>
+    <p class="feed__status" id="status" role="status" aria-live="polite"></p>
+  </main>
+
+  <footer class="footer-simple" role="contentinfo">
+    <div>© 2026 LMTS Inova Simples (I.S.) · CNPJ 69.539.194/0001-02. Todos os direitos reservados.</div>
+    <div style="margin-top:0.5rem;">
+      <a href="privacidade.html">Privacidade</a> · <a href="termos.html">Termos de uso</a>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var container = document.getElementById('posts');
+      var posts = Array.prototype.slice.call(container.querySelectorAll('.post'));
+      var status = document.getElementById('status');
+      var sentinel = document.getElementById('sentinel');
+      var batch = parseInt(container.getAttribute('data-batch'), 10) || 3;
+      var shown = 0;
+
+      function showMore(n) {
+        var target = Math.min(shown + n, posts.length);
+        for (; shown < target; shown++) posts[shown].hidden = false;
+        status.textContent = shown >= posts.length ? 'Você chegou ao fim.' : 'Carregando mais conteúdo…';
+        if (!observer) return;
+        observer.disconnect();
+        // Reobserva para disparar de novo caso o sentinel ainda esteja visível.
+        if (shown < posts.length) observer.observe(sentinel);
+      }
+
+      // Garante que um post linkado por #id esteja visível.
+      function revealHash() {
+        var id = decodeURIComponent(location.hash.slice(1));
+        if (!id) return;
+        var idx = posts.findIndex(function (p) { return p.id === id; });
+        if (idx >= shown) showMore(idx + 1 - shown);
+        var el = document.getElementById(id);
+        if (el) el.scrollIntoView();
+      }
+
+      posts.forEach(function (p) { p.hidden = true; });
+
+      var observer = null;
+      if ('IntersectionObserver' in window) {
+        observer = new IntersectionObserver(function (entries) {
+          if (entries[0].isIntersecting) showMore(batch);
+        }, { rootMargin: '0px 0px 400px 0px' });
+        observer.observe(sentinel);
+      } else {
+        showMore(posts.length);
+      }
+
+      showMore(batch);
+      revealHash();
+      window.addEventListener('hashchange', revealHash);
+    })();
+  </script>
+</body>
+</html>

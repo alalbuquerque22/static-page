@@ -638,6 +638,16 @@
     }
     .article-card__meta { font-size: 0.72rem; color: var(--text-muted); }
 
+    /* Link do título cobre o card inteiro */
+    .article-feature, .article-card { position: relative; }
+    .article-link { color: inherit; text-decoration: none; }
+    .article-link::after { content: ''; position: absolute; inset: 0; z-index: 1; }
+    .editorial-more { margin-top: 2rem; text-align: right; }
+    .editorial-more a {
+      font-size: 0.9rem; font-weight: 600; color: #1f4a47; text-decoration: none;
+    }
+    .editorial-more a:hover { text-decoration: underline; }
+
     @media (max-width: 860px) {
       .editorial-grid { grid-template-columns: 1fr; }
       .article-feature { min-height: 260px; }
@@ -1082,9 +1092,9 @@
           <div class="article-feature__overlay">
             <p class="article-feature__tag">Análise · Patrimônio</p>
             <h3 class="article-feature__title">
-              Como montar uma carteira sólida e disciplinada com a taxa de juros nas alturas
+              <a href="conteudo.html#post-carteira-solida" class="article-link">Como montar uma carteira sólida e disciplinada com a taxa de juros nas alturas</a>
             </h3>
-            <p class="article-feature__meta">Análises Lmts · <a href="waitlist.html" style="color: var(--green); text-decoration: underline;">Solicitar acesso</a></p>
+            <p class="article-feature__meta">Análises Lmts · <span style="color: var(--green); text-decoration: underline;">Ler conteúdo</span></p>
           </div>
         </article>
 
@@ -1100,9 +1110,9 @@
             <div class="article-card__body">
               <p class="article-card__tag">Radar · Mercado</p>
               <h3 class="article-card__title">
-                O que a inflação de outubro indica para quem investe em renda fixa em 2025
+                <a href="conteudo.html#post-inflacao-outubro" class="article-link">Raio-x do balanço: KLABIN no 3T26</a>
               </h3>
-              <p class="article-card__meta">Análise de mercado · <a href="waitlist.html" style="color: var(--green); text-decoration: underline;">Solicitar acesso</a></p>
+              <p class="article-card__meta">Análise de mercado · <span style="color: var(--green); text-decoration: underline;">Ler conteúdo</span></p>
             </div>
           </article>
 
@@ -1116,14 +1126,18 @@
             <div class="article-card__body">
               <p class="article-card__tag">Análise · Como funciona</p>
               <h3 class="article-card__title">
-                Nota de análise: veja como a inteligência artificial avalia cada ativo
+                <a href="conteudo.html#post-nota-analise-ia" class="article-link">Nota de análise: veja como a inteligência artificial avalia cada ativo</a>
               </h3>
-              <p class="article-card__meta">Como funciona · <a href="waitlist.html" style="color: var(--green); text-decoration: underline;">Solicitar acesso</a></p>
+              <p class="article-card__meta">Como funciona · <span style="color: var(--green); text-decoration: underline;">Ler conteúdo</span></p>
             </div>
           </article>
 
         </div>
       </div>
+
+      <p class="editorial-more reveal">
+        <a href="conteudo.html">Ver todo o conteúdo →</a>
+      </p>
     </div>
   </section>
 
